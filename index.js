@@ -24,6 +24,9 @@ mongoose
   );
 
 app.use(express.json());
+app.use("/", (req, res) => {
+  res.json("Hello I am running");
+});
 app.use("/uploads", express.static("uploads"));
 app.use("/api", require("./routes/app.routes"));
 app.use("/api/user", require("./routes/app.user"));
