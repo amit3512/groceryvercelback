@@ -36,7 +36,7 @@ app.use("/api/user", require("./routes/app.user"));
 if (process.env.NODE_ENV == "production") {
   app.use(express.static("/"));
   const path = require("path");
-  app.get("/", (req, res) => {
+  app.get("*", (req, res) => {
     res.status(200).send("Hello server is running").end();
   });
 }
